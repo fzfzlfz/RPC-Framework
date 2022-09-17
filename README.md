@@ -10,19 +10,19 @@ Although the principle of RPC is not difficult, I encountered many problems in t
 
 A chematic diagram of the simplest RPC framework idea is shown in the figure below, which is also the current architecture of [RPC-Framework](https://github.com/fzfzlfz/RPC-Framework):
 
-![](C:\Users\HUAWEI\Desktop\guide-rpc-framework\images\rpc-architure.png)
+![](https://github.com/fzfzlfz/RPC-Framework/blob/main/images/rpc-architure.png)
 
 The service provider Server registers the service with the registry, and the service consumer Client gets the service-related information through the registry, and then requests the service provider Server through the network.
 
 As a leader in the field of RPC framework [Dubbo](https://github.com/apache/dubbo), the architecture is shown in the figure below, which is roughly the same as what we drew above.
 
-<img src="C:\Users\HUAWEI\Desktop\guide-rpc-framework\images\dubbo-architure.jpg" style="zoom:80%;" />
+<img src="https://github.com/fzfzlfz/RPC-Framework/blob/main/images/dubbo-architure.jpg" />
 
 **Under normal circumstances, the RPC framework must not only provide service discovery functions, but also provide load balancing, fault tolerance and other functions. Such an RPC framework is truly qualified. ** 
 
 **Please let me simply talk about the idea of designing a most basic RPC framework:**
 
-![](C:\Users\HUAWEI\Desktop\guide-rpc-framework\images\rpc-architure-detail.png)
+![](https://github.com/fzfzlfz/RPC-Framework/blob/main/images/rpc-architure-detail.png)
 
 1. **Registration Center**: The registration center is required first, and Zookeeper is recommended. The registration center is responsible for the registration and search of service addresses, which is equivalent to a directory service. When the server starts, the service name and its corresponding address (ip+port) are registered in the registry, and the service consumer finds the corresponding service address according to the service name. With the service address, the service consumer can request the server through the network.
 2. **Network Transmission**: Since you want to call a remote method, you must send a request. The request must at least include the class name, method name, and related parameters you call! Recommend the Netty framework based on NIO.
@@ -38,7 +38,7 @@ Fork the project to your own repository, then clone the project to its own local
 
 ### Initialize git hooks
 
-**This step is mainly to run Check Style before submitting the code to ensure that the code format is correct. If there is a problem, it cannot be submitted. **
+This step is mainly to run Check Style before submitting the code to ensure that the code format is correct. If there is a problem, it cannot be submitted. 
 
 >The following demonstrates the operation corresponding to Mac/Linux. Window users need to manually copy the `pre-commit` file under the `config/git-hooks` directory to the `.git/hooks/` directory under the project.
 
@@ -55,11 +55,11 @@ The main function of the `init.sh` script is to copy the git commit hook to the 
 
 IntelliJ IDEA-> Preferences->Plugins-> search to download CheckStyle plug-in, and then configure it as follows.
 
-![CheckStyle plug-in download and configuration](C:\Users\HUAWEI\Desktop\guide-rpc-framework\images\setting-check-style.png)
+![CheckStyle plug-in download and configuration](https://github.com/fzfzlfz/RPC-Framework/blob/main/images/setting-check-style.png)
 
 After the configuration is complete, use this plugin as follows!
 
-![How to use the plug-in](C:\Users\HUAWEI\Desktop\guide-rpc-framework\images\run-check-style.png)
+![How to use the plug-in](https://github.com/fzfzlfz/RPC-Framework/blob/main/images/run-check-style.png)
 
 ### Download and run zookeeper
 
@@ -71,7 +71,7 @@ download:
 docker pull zookeeper:3.5.8
 ```
 
-运行：
+RU：
 
 ```shell
 docker run -d --name zookeeper -p 2181:2181 zookeeper:3.5.8
